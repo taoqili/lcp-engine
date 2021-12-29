@@ -54,6 +54,18 @@ module.exports = {
       {
         test: /\.css$/,
         use: [...getCssLoaders()]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          ...getCssLoaders(),
+          {
+            loader: 'less-loader',
+            options: {
+              sourceMap: isDev,
+            }
+          }
+        ]
       }
     ]
   },
