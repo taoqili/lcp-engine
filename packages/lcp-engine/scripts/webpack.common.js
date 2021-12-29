@@ -39,7 +39,7 @@ const getCssLoaders = () => {
 }
 module.exports = {
   entry: {
-    app: path.resolve(HOME_DIR, './src/index.ts')
+    app: path.resolve(HOME_DIR, './src/index.tsx')
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
