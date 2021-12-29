@@ -24,7 +24,7 @@ const getCssLoaders = () => {
       postcssOptions: {
         plugins: [
           isProd && [
-            'postcss-preset-env',
+            'postcss-preset-env', // 需要配合package.json里的browserslist才能生效
             {
               autoprefixer: {
                 grid: true
