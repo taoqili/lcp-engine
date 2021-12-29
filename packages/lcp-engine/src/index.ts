@@ -1,9 +1,10 @@
 import workspace from './workspace';
 const works = workspace();
+import './index.css'
 
 const root = document.querySelector('#root');
 if (root) {
-  root.innerHTML = `<div>${works}</div>`
+  root.innerHTML = `<div class="test">${works}</div>`
 }
 
 if (module && module.hot) {
