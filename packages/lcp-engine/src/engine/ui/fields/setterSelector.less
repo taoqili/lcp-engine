@@ -1,0 +1,24 @@
+@import "../../variables";
+
+.ve-setter-selector-popup-wrapper {
+  .ve-popup-content {
+    margin: 0;
+    padding: 0 !important;
+  }
+  .ve-setter-selector-list {
+    >div {
+      padding: 6px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--color-block-background-light, @dark-alpha-9);
+      }
+
+      &.ve-setter-selector-selected {
+        background-color: var(--color-block-background-shallow, @dark-alpha-8);
+      }
+    }
+  }
+
+}

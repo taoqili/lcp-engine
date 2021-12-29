@@ -1,0 +1,80 @@
+import * as React from 'react';
+import Prop from '../../core/pages/prop';
+
+import './variableSetter.less';
+
+class Input extends React.Component {
+  public props: {
+    value: string;
+    placeholder: string;
+    onChange: (val: any) => any;
+  };
+
+  public state: { focused: boolean };
+
+  private domRef: HTMLElement;
+
+  constructor(props: object) {
+    super(props);
+    this.state = {
+      focused: false,
+    };
+  }
+
+  public componentDidMount() {
+    this.adjustTextAreaHeight();
+  }
+
+  public adjustTextAreaHeight() {
+    this.domRef.style.height = '1px';
+    const calculatedHeight = this.domRef.scrollHeight;
+    this.domRef.style.height = calculatedHeight >= 200 ? '200px' : calculatedHeight + 'px';
+  }
+
+  public render() {
+    const { value, placeholder, onChange } = this.props;
+    return (
+      <div
+        className={`engine-variable-setter-input engine-input-control${this.state.focused ? ' engine-focused' : ''}`}
+      >
+        <textarea
+          ref={(r) => { this.domRef = r; }}
+          className='engine-input'
+          value={value || ''}
+          placeholder={placeholder || ''}
+          onChange={(e) => { onChange((e.target.value || '')); }}
+          onBlur={() => this.setState({ focused: false })}
+          onFocus={() => this.setState({ focused: true })}
+          onKeyUp={this.adjustTextAreaHeight.bind(this)}
+        >
+        </textarea>
+      </div>
+    );
+  }
+}
+
+export default class VariableSetter extends React.Component<{
+  prop: Prop,
+  placeholder: string,
+}> {
+  public willDetach: () => any;
+
+  public componentWillMount() {
+    this.willDetach = this.props.prop.onValueChange(() => this.forceUpdate());
+  }
+
+  public componentWillUnmount() {
+    if (this.willDetach) {
+      this.willDetach();
+    }
+  }
+
+  public render() {
+    const prop = this.props.prop;
+    return (<Input
+      value={prop.getVariableValue()}
+      placeholder={this.props.placeholder}
+      onChange={(val: string) => prop.setVariableValue(val)}
+    />);
+  }
+}

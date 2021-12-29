@@ -1,0 +1,122 @@
+@import "../../variables";
+
+@icon-size: 20px;
+@navigator-height: 36px;
+
+.engine-navigator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: @navigator-height;
+  overflow: hidden;
+  z-index: 4;
+  box-sizing: border-box;
+
+  .engine-navigator-path {
+    display: flex;
+    align-items: center;
+    height: @navigator-height;
+    background: var(---color-block-background-normal, @white-alpha-1);
+    border-bottom: 1px solid var(--color-line-normal, @normal-alpha-7);
+    position: relative;
+
+    .engine-navigator-icon {
+      margin: 0 2px 0 5px;
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+
+      & * {
+        fill: var(--color-icon-normal, @normal-alpha-4);
+      }
+    }
+    .engine-navigator-nonselected {
+      font-size: 12px;
+      font-family: @font-family;
+      color: var(--color-text, @dark-alpha-3);
+      pointer-events: none;
+    }
+    .engine-navigator-segment {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 6px 4px;
+      border-radius: 2px;
+      > .engine-segment-title {
+        font-size: 12px;
+        font-family: @font-family;
+        color: var(--color-text, @dark-alpha-3);
+        max-width: 48px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+      }
+
+      &:not(:last-of-type) {
+        &:after {
+          display: inline-block;
+          content: '>';
+          width: 8px;
+          height: 10px;
+          font-family: sans-serif;
+          margin-left: 4px;
+          margin-right: -5px;
+          opacity: 0.4;
+        }
+      }
+
+      &:last-of-type {
+        cursor: default;
+        > .engine-segment-title {
+          max-width: 72px;
+        }
+      }
+    }
+
+    .engine-toggle-tree {
+      position: absolute;
+      right: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  }
+
+  .engine-navigator-outline {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+    outline: none;
+  }
+}
+
+html.engine-drag-mode, html.engine-show-tree {
+  .engine-navigator {
+    height: auto;
+    bottom: 0;
+    .engine-toggle-tree {
+      .ve-svgicon {
+        opacity: 1;
+        path {
+          fill: @active-color;
+        }
+      }
+    }
+    .engine-navigator-outline {
+      display: block;
+    }
+  }
+}
+
+html.engine-hide-navigator {
+  .engine-navigator {
+    display: none;
+  }
+}

@@ -1,0 +1,213 @@
+@import "../../variables";
+
+@slate-width: 200px;
+@slate-height: 39px;
+
+.engine-dockpane {
+  font-size: 14px!important;
+  left: 0;
+  bottom: 0;
+  top: @actionpane-height;
+  width: @dockpane-width;
+  padding-top: 15px;
+
+  font: 12px/1 @font-family;
+  color: var(--color-text, @dark-alpha-3);
+  border-right: 1px solid var(--color-line-normal, @normal-alpha-7);
+  z-index: 4;
+  background: var(--color-pane-background, @white-alpha-1);
+  transition: transform 0.2s;
+
+  .engine-dockpane-docks {
+    height: 100%;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .engine-dock {
+      .engine-docktray {
+        outline: none;
+        height: @dockpane-width;
+        width: @dockpane-width;
+
+        .engine-dock-menu {
+          height: @dockpane-width;
+          width: @dockpane-width;
+          background: transparent;
+          color: var(--color-text, @dark-alpha-3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          box-sizing: border-box;
+          padding: 14px;
+          svg {
+            fill: var(--color-icon-normal, @normal-alpha-4);
+            transition: fill @transition-duration @transition-ease;
+
+            &:hover {
+              fill: var(--color-icon-hover, @normal-alpha-3);
+              transition: fill @transition-duration @transition-ease;
+            }
+          }
+        }
+
+        .engine-slate {
+          position: fixed;
+          left: @dockpane-width;
+          top: @actionpane-height;
+          bottom: 0;
+          box-sizing: border-box;
+          width: @slate-width;
+          background:var(--color-pane-background, @white-alpha-1);
+          z-index: 3;
+          display: none;
+          border-right: 1px solid var(--color-line-normal, @normal-alpha-7);
+
+          &.engine-slate-bottom{
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: auto;
+          }
+          &.engine-slate-top{
+            left: 0;
+            right: 0;
+            bottom: auto;
+            top: 0;
+          }
+          &.engine-slate-left{
+            left: 0;
+            right: auto;
+            bottom: 0;
+            top: 0;
+          }
+          &.engine-slate-right{
+            left: auto;
+            right: 0;
+            bottom: 0;
+            top: 0;
+          }
+
+          .engine-slate-header {
+            box-sizing: border-box;
+            height: @slate-height;
+            position: relative;
+            background: var(--color-block-background-light, @normal-alpha-9);
+            .engine-slate-close {
+              position: absolute;
+              right: 5px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            .engine-slate-tabs {
+              display: flex;
+              height: @slate-height;
+              align-items: stretch;
+              .engine-slate-title-wrap {
+                display: flex;
+                align-items: center;
+                padding-left: 12px;
+                justify-content: center;
+                color: var(--color-title, @dark-alpha-2);
+              }
+              .engine-slate-title-help-tip {
+                display: flex;
+                margin-left: 4px;
+                a:visited {
+                  color: var(--color-line-darken, darken(@normal-alpha-7, 10%));
+                }
+              }
+              .engine-slate-title {
+                flex: 1;
+                font-size: 14px;
+                line-height: @slate-height;
+                font-family: @font-family;
+                font-weight: normal;
+                color: var(--color-text, @dark-alpha-3);
+                text-align: center;
+                border-bottom: 1px solid var(--color-line-normal, @normal-alpha-7);
+              }
+              &.engine-multi-tabs {
+                margin-right: 30px;
+                .engine-slate-title {
+                  line-height: @slate-height;
+                  border-bottom: 2px solid transparent;
+                  &:hover {
+                    border-bottom-color: var(--color-line-darken, darken(@normal-alpha-7, 20%));
+                    transition: border-bottom-color .2s;
+                    cursor: pointer;
+                  }
+                  &.engine-active {
+                    transition: border-bottom-color .2s;
+                    cursor: default;
+                    border-bottom-color: var(--color-brand, @brand-color-1);
+                  }
+                }
+              }
+            }
+          }
+          .engine-slate-content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+          .engine-slate-header + .engine-slate-content {
+            top: @slate-height;
+          }
+          [class *= 'engine-slate-draggable-line-'] {
+            display: none;
+          }
+          [class *= 'engine-slate-draggable-line-'].show {
+            display: block;
+          }
+          .engine-slate-draggable-line-top {
+            top: -2px;
+          }
+          .engine-slate-draggable-line-bottom {
+            bottom: -2px;
+          }
+          .engine-slate-draggable-line-left {
+            left: -2px;
+          }
+          .engine-slate-draggable-line-right {
+            right: -2px;
+          }
+        }
+        &.engine-active {
+          .engine-slate {
+            display: block;
+          }
+          .engine-dock-menu {
+            opacity: 1;
+            svg {
+              fill: var(--color-brand, @brand-color-1);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+html.engine-preview-mode .engine-dockpane {
+  display: none;
+}
+
+html.engine-hide-slate .engine-dockpane .engine-slate, html.engine-drag-mode .engine-dockpane .engine-slate {
+  display: none;
+}
+
+html.engine-slate-fixed .engine-dockpane .engine-slate .engine-slate-header .engine-slate-close {
+  display: none;
+}
+
+html.engine-slate-full-screen .engine-dockpane .engine-slate {
+  right: 0;
+  width: auto !important;
+}
