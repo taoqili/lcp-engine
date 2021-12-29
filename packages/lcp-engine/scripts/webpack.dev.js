@@ -1,7 +1,4 @@
 const { merge } = require('webpack-merge')
-const path = require('path')
-const webpack = require('webpack')
-
 const common = require('./webpack.common')
 const { OUTPUT_DIR, SERVER_HOST, SERVER_PORT } = require('./constant')
 
