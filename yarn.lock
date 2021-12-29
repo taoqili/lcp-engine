@@ -2,17 +2,118 @@
 # yarn lockfile v1
 
 
-"@babel/code-frame@^7.0.0":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.16.0":
   version "7.16.0"
   resolved "https://npm.corp.kuaishou.com/@babel%2fcode-frame/-/code-frame-7.16.0.tgz#0dfc80309beec8411e65e706461c408b0bb9b431"
   integrity sha1-DfyAMJvuyEEeZecGRhxAiwu5tDE=
   dependencies:
     "@babel/highlight" "^7.16.0"
 
+"@babel/generator@^7.16.5":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fgenerator/-/generator-7.16.5.tgz#26e1192eb8f78e0a3acaf3eede3c6fc96d22bedf"
+  integrity sha512-kIvCdjZqcdKqoDbVVdt5R99icaRtrtYhYK/xux5qiWCBmfdvEYMFZ68QCrpE5cbFM1JsuArUNs1ZkuKtTtUcZA==
+  dependencies:
+    "@babel/types" "^7.16.0"
+    jsesc "^2.5.1"
+    source-map "^0.5.0"
+
+"@babel/helper-annotate-as-pure@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-annotate-as-pure/-/helper-annotate-as-pure-7.16.0.tgz#9a1f0ebcda53d9a2d00108c4ceace6a5d5f1f08d"
+  integrity sha1-mh8OvNpT2aLQAQjEzqzmpdXx8I0=
+  dependencies:
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-create-class-features-plugin@^7.16.0":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-create-class-features-plugin/-/helper-create-class-features-plugin-7.16.5.tgz#5d1bcd096792c1ebec6249eebc6358eec55d0cad"
+  integrity sha512-NEohnYA7mkB8L5JhU7BLwcBdU3j83IziR9aseMueWGeAjblbul3zzb8UvJ3a1zuBiqCMObzCJHFqKIQE6hTVmg==
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.16.0"
+    "@babel/helper-environment-visitor" "^7.16.5"
+    "@babel/helper-function-name" "^7.16.0"
+    "@babel/helper-member-expression-to-functions" "^7.16.5"
+    "@babel/helper-optimise-call-expression" "^7.16.0"
+    "@babel/helper-replace-supers" "^7.16.5"
+    "@babel/helper-split-export-declaration" "^7.16.0"
+
+"@babel/helper-environment-visitor@^7.16.5":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-environment-visitor/-/helper-environment-visitor-7.16.5.tgz#f6a7f38b3c6d8b07c88faea083c46c09ef5451b8"
+  integrity sha512-ODQyc5AnxmZWm/R2W7fzhamOk1ey8gSguo5SGvF0zcB3uUzRpTRmM/jmLSm9bDMyPlvbyJ+PwPEK0BWIoZ9wjg==
+  dependencies:
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-function-name@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-function-name/-/helper-function-name-7.16.0.tgz#b7dd0797d00bbfee4f07e9c4ea5b0e30c8bb1481"
+  integrity sha1-t90Hl9ALv+5PB+nE6lsOMMi7FIE=
+  dependencies:
+    "@babel/helper-get-function-arity" "^7.16.0"
+    "@babel/template" "^7.16.0"
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-get-function-arity@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-get-function-arity/-/helper-get-function-arity-7.16.0.tgz#0088c7486b29a9cb5d948b1a1de46db66e089cfa"
+  integrity sha1-AIjHSGspqctdlIsaHeRttm4InPo=
+  dependencies:
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-hoist-variables@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-hoist-variables/-/helper-hoist-variables-7.16.0.tgz#4c9023c2f1def7e28ff46fc1dbcd36a39beaa81a"
+  integrity sha1-TJAjwvHe9+KP9G/B2802o5vqqBo=
+  dependencies:
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-member-expression-to-functions@^7.16.5":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-member-expression-to-functions/-/helper-member-expression-to-functions-7.16.5.tgz#1bc9f7e87354e86f8879c67b316cb03d3dc2caab"
+  integrity sha512-7fecSXq7ZrLE+TWshbGT+HyCLkxloWNhTbU2QM1NTI/tDqyf0oZiMcEfYtDuUDCo528EOlt39G1rftea4bRZIw==
+  dependencies:
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-optimise-call-expression@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-optimise-call-expression/-/helper-optimise-call-expression-7.16.0.tgz#cecdb145d70c54096b1564f8e9f10cd7d193b338"
+  integrity sha1-zs2xRdcMVAlrFWT46fEM19GTszg=
+  dependencies:
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-plugin-utils@^7.14.5", "@babel/helper-plugin-utils@^7.16.5":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-plugin-utils/-/helper-plugin-utils-7.16.5.tgz#afe37a45f39fce44a3d50a7958129ea5b1a5c074"
+  integrity sha512-59KHWHXxVA9K4HNF4sbHCf+eJeFe0Te/ZFGqBT4OjXhrwvA04sGfaEGsVTdsjoszq0YTP49RC9UKe5g8uN2RwQ==
+
+"@babel/helper-replace-supers@^7.16.5":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-replace-supers/-/helper-replace-supers-7.16.5.tgz#96d3988bd0ab0a2d22c88c6198c3d3234ca25326"
+  integrity sha512-ao3seGVa/FZCMCCNDuBcqnBFSbdr8N2EW35mzojx3TwfIbdPmNK+JV6+2d5bR0Z71W5ocLnQp9en/cTF7pBJiQ==
+  dependencies:
+    "@babel/helper-environment-visitor" "^7.16.5"
+    "@babel/helper-member-expression-to-functions" "^7.16.5"
+    "@babel/helper-optimise-call-expression" "^7.16.0"
+    "@babel/traverse" "^7.16.5"
+    "@babel/types" "^7.16.0"
+
+"@babel/helper-split-export-declaration@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-split-export-declaration/-/helper-split-export-declaration-7.16.0.tgz#29672f43663e936df370aaeb22beddb3baec7438"
+  integrity sha1-KWcvQ2Y+k23zcKrrIr7ds7rsdDg=
+  dependencies:
+    "@babel/types" "^7.16.0"
+
 "@babel/helper-validator-identifier@^7.15.7":
   version "7.15.7"
   resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-validator-identifier/-/helper-validator-identifier-7.15.7.tgz#220df993bfe904a4a6b02ab4f3385a5ebf6e2389"
   integrity sha1-Ig35k7/pBKSmsCq08zhaXr9uI4k=
+
+"@babel/helper-validator-option@^7.14.5":
+  version "7.14.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fhelper-validator-option/-/helper-validator-option-7.14.5.tgz#6e72a1fff18d5dfcb878e1e62f1a021c4b72d5a3"
+  integrity sha1-bnKh//GNXfy4eOHmLxoCHEty1aM=
 
 "@babel/highlight@^7.16.0":
   version "7.16.0"
@@ -22,6 +123,69 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     chalk "^2.0.0"
     js-tokens "^4.0.0"
+
+"@babel/parser@^7.16.0", "@babel/parser@^7.16.5":
+  version "7.16.6"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fparser/-/parser-7.16.6.tgz#8f194828193e8fa79166f34a4b4e52f3e769a314"
+  integrity sha512-Gr86ujcNuPDnNOY8mi383Hvi8IYrJVJYuf3XcuBM/Dgd+bINn/7tHqsj+tKkoreMbmGsFLsltI/JJd8fOFWGDQ==
+
+"@babel/plugin-syntax-typescript@^7.16.0":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fplugin-syntax-typescript/-/plugin-syntax-typescript-7.16.5.tgz#f47a33e4eee38554f00fb6b2f894fa1f5649b0b3"
+  integrity sha512-/d4//lZ1Vqb4mZ5xTep3dDK888j7BGM/iKqBmndBaoYAFPlPKrGU608VVBz5JeyAb6YQDjRu1UKqj86UhwWVgw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.16.5"
+
+"@babel/plugin-transform-typescript@^7.16.1":
+  version "7.16.1"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fplugin-transform-typescript/-/plugin-transform-typescript-7.16.1.tgz#cc0670b2822b0338355bc1b3d2246a42b8166409"
+  integrity sha1-zAZwsoIrAzg1W8Gz0iRqQrgWZAk=
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.16.0"
+    "@babel/helper-plugin-utils" "^7.14.5"
+    "@babel/plugin-syntax-typescript" "^7.16.0"
+
+"@babel/preset-typescript@^7.16.5":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2fpreset-typescript/-/preset-typescript-7.16.5.tgz#b86a5b0ae739ba741347d2f58c52f52e63cf1ba1"
+  integrity sha512-lmAWRoJ9iOSvs3DqOndQpj8XqXkzaiQs50VG/zESiI9D3eoZhGriU675xNCr0UwvsuXrhMAGvyk1w+EVWF3u8Q==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.16.5"
+    "@babel/helper-validator-option" "^7.14.5"
+    "@babel/plugin-transform-typescript" "^7.16.1"
+
+"@babel/template@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2ftemplate/-/template-7.16.0.tgz#d16a35ebf4cd74e202083356fab21dd89363ddd6"
+  integrity sha1-0Wo16/TNdOICCDNW+rId2JNj3dY=
+  dependencies:
+    "@babel/code-frame" "^7.16.0"
+    "@babel/parser" "^7.16.0"
+    "@babel/types" "^7.16.0"
+
+"@babel/traverse@^7.16.5":
+  version "7.16.5"
+  resolved "https://npm.corp.kuaishou.com/@babel%2ftraverse/-/traverse-7.16.5.tgz#d7d400a8229c714a59b87624fc67b0f1fbd4b2b3"
+  integrity sha512-FOCODAzqUMROikDYLYxl4nmwiLlu85rNqBML/A5hKRVXG2LV8d0iMqgPzdYTcIpjZEBB7D6UDU9vxRZiriASdQ==
+  dependencies:
+    "@babel/code-frame" "^7.16.0"
+    "@babel/generator" "^7.16.5"
+    "@babel/helper-environment-visitor" "^7.16.5"
+    "@babel/helper-function-name" "^7.16.0"
+    "@babel/helper-hoist-variables" "^7.16.0"
+    "@babel/helper-split-export-declaration" "^7.16.0"
+    "@babel/parser" "^7.16.5"
+    "@babel/types" "^7.16.0"
+    debug "^4.1.0"
+    globals "^11.1.0"
+
+"@babel/types@^7.16.0":
+  version "7.16.0"
+  resolved "https://npm.corp.kuaishou.com/@babel%2ftypes/-/types-7.16.0.tgz#db3b313804f96aadd0b776c4823e127ad67289ba"
+  integrity sha1-2zsxOAT5aq3Qt3bEgj4SetZyibo=
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.15.7"
+    to-fast-properties "^2.0.0"
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.6"
@@ -1059,6 +1223,11 @@
   integrity sha1-Vw06C5msmVNg4xNv1gRRE7G9I28=
   dependencies:
     "@types/node" "*"
+
+"@types/webpack-env@^1.16.3":
+  version "1.16.3"
+  resolved "https://npm.corp.kuaishou.com/@types%2fwebpack-env/-/webpack-env-1.16.3.tgz#b776327a73e561b71e7881d0cd6d34a1424db86a"
+  integrity sha1-t3YyenPlYbceeIHQzW00oUJNuGo=
 
 "@types/ws@^8.2.2":
   version "8.2.2"
@@ -2836,6 +3005,11 @@ glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+globals@^11.1.0:
+  version "11.12.0"
+  resolved "https://npm.corp.kuaishou.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
+  integrity sha1-q4eVM4hooLq9hSV1gBjCp+uVxC4=
+
 globby@^11.0.1, globby@^11.0.2:
   version "11.0.4"
   resolved "https://npm.corp.kuaishou.com/globby/-/globby-11.0.4.tgz#2cbaff77c2f2a62e71e9b2813a67b97a3a3001a5"
@@ -3485,6 +3659,11 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://npm.corp.kuaishou.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
+
+jsesc@^2.5.1:
+  version "2.5.2"
+  resolved "https://npm.corp.kuaishou.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
+  integrity sha1-gFZNLkg9rPbo7yCWUKZ98/DCg6Q=
 
 json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
   version "1.0.2"
@@ -5270,6 +5449,11 @@ source-map-support@~0.5.20:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
+source-map@^0.5.0:
+  version "0.5.7"
+  resolved "https://npm.corp.kuaishou.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
+  integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
+
 source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0:
   version "0.6.1"
   resolved "https://npm.corp.kuaishou.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
@@ -5604,6 +5788,11 @@ tmp@^0.0.33:
   dependencies:
     os-tmpdir "~1.0.2"
 
+to-fast-properties@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.corp.kuaishou.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
+  integrity sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=
+
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://npm.corp.kuaishou.com/to-regex-range/-/to-regex-range-5.0.1.tgz#1648c44aae7c8d988a326018ed72f5b4dd0392e4"
@@ -5707,6 +5896,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://npm.corp.kuaishou.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@^4.5.4:
+  version "4.5.4"
+  resolved "https://npm.corp.kuaishou.com/typescript/-/typescript-4.5.4.tgz#a17d3a0263bf5c8723b9c52f43c5084edf13c2e8"
+  integrity sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==
 
 uglify-js@^3.1.4:
   version "3.14.5"
