@@ -3,20 +3,40 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const {HOME_DIR} = require('./constant')
-const {isDev} = require('./env')
+const {isDev, isProd} = require('./env')
 
-const getCssLoaders = () => [
-  isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-  {
-    loader: 'css-loader',
-    options: {
-      // modules: {
-      //   localIdentName: "[local]--[hash:base64:5]"
-      // },
-      sourceMap: isDev,
+const getCssLoaders = () => {
+  const cssLoaders = [
+    isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+    {
+      loader: 'css-loader',
+      options: {
+        // modules: {
+        //   localIdentName: "[local]--[hash:base64:5]"
+        // },
+        sourceMap: isDev,
+      }
     }
-  }
-]
+  ]
+  isProd && cssLoaders.push({
+    loader: 'postcss-loader',
+    options: {
+      postcssOptions: {
+        plugins: [
+          isProd && [
+            'postcss-preset-env',
+            {
+              autoprefixer: {
+                grid: true
+              }
+            }
+          ]
+        ]
+      }
+    }
+  })
+  return cssLoaders
+}
 module.exports = {
   entry: {
     app: path.resolve(HOME_DIR, './src/index.ts')
