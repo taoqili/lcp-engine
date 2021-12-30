@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const {HOME_DIR, OUTPUT_DIR} = require('./constant')
 const {isDev, isProd} = require('./env')
 
@@ -124,6 +125,7 @@ module.exports = {
           },
         },
       ],
-    })
+    }),
+    new CleanWebpackPlugin()
   ]
 }
