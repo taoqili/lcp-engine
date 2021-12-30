@@ -1,3 +1,3 @@
-export default () => {
-  return 'engine'
+export default (str: string) => {
+  return str;
 }
