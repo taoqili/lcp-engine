@@ -2,6 +2,7 @@ import React from "react";
 import ReactDom from "react-dom"
 import "./index.less"
 
+// test doc
 ReactDom.render(
   <div className={'test'}>
     <p>red</p>
