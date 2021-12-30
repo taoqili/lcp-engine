@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom"
+import ReactDOM from "react-dom"
 import "./index.less"
 import engine from './engine'
 import icon from './icon.svg'
@@ -13,7 +13,7 @@ const handleOnClick = () => {
   })
 }
 
-ReactDom.render(
+ReactDOM.render(
   <div className={'test'}>
     <p>red</p>
     <p className={'name'}>green</p>

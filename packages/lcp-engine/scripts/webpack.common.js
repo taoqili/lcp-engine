@@ -42,6 +42,9 @@ module.exports = {
   entry: {
     app: path.resolve(HOME_DIR, './src/index.tsx')
   },
+  output: {
+    libraryTarget: "umd"
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     alias: {
@@ -55,6 +58,10 @@ module.exports = {
     buildDependencies: {
       config: [__filename],
     },
+  },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     rules: [
