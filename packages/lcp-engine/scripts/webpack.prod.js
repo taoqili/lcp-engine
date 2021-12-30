@@ -10,6 +10,7 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     filename: 'static/[name].[contenthash:8].js',
+    assetModuleFilename: 'static/[name].[contenthash:8].[ext]',
     path: OUTPUT_DIR
   },
   plugins: [

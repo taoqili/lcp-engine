@@ -72,7 +72,20 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      {
+        test: [/\.gif$/, /\.jpe?g$/, /\.a?png$/],
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 2 * 1024,
+          },
+        },
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2?)$/,
+        type: 'asset/resource',
+      },
     ]
   },
   plugins: [
