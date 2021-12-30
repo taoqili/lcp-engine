@@ -113,7 +113,7 @@ module.exports = {
           globOptions: {
             dot: true,
             gitignore: true,
-            ignore: ['**/index.html'],
+            ignore: ['**/index.html', '**/.gitkeep'],
           },
         },
       ],
