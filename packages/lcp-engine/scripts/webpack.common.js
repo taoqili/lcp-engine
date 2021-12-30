@@ -50,6 +50,12 @@ module.exports = {
       "utils": path.resolve(HOME_DIR, './src/utils')
     }
   },
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
   module: {
     rules: [
       {
