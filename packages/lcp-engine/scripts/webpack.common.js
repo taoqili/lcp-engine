@@ -2,7 +2,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const {HOME_DIR} = require('./constant')
+const CopyPlugin = require('copy-webpack-plugin')
+const {HOME_DIR, OUTPUT_DIR} = require('./constant')
 const {isDev, isProd} = require('./env')
 
 const getCssLoaders = () => {
@@ -96,5 +97,21 @@ module.exports = {
       name: 'Compiled success!',
       color: '#52c41a'
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          context: 'public',
+          // ** 表示任意目录
+          from: '**/*',
+          to: OUTPUT_DIR,
+          toType: 'dir',
+          globOptions: {
+            dot: true,
+            gitignore: true,
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
+    })
   ]
 }
