@@ -101,7 +101,6 @@ module.exports = {
       patterns: [
         {
           context: 'public',
-          // ** 表示任意目录
           from: '**/*',
           to: OUTPUT_DIR,
           toType: 'dir',
